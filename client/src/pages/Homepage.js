@@ -3,7 +3,7 @@
 import React from "react";
 
 const Homepage = () => {
-  return <div>Homepage</div>;
+  return <div>Dashboard</div>;
 };
 
 export default Homepage;
