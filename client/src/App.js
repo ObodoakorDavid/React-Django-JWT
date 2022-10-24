@@ -12,7 +12,9 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<PrivateRoute />} />
+          <Route element={<PrivateRoute />}>
+            <Route element={<Homepage />} path="/" />
+          </Route>
           <Route path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
