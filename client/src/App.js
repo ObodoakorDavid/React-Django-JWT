@@ -6,18 +6,21 @@ import Homepage from "./pages/Homepage";
 import Login from "./pages/Login";
 import Header from "./component/Header";
 import PrivateRoute from "./utils/PrivateRoute";
+import { AuthProvider } from "./context/AuthContext";
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route element={<PrivateRoute />}>
-            <Route element={<Homepage />} path="/" />
-          </Route>
-          <Route path="/login" element={<Login />} />
-        </Routes>
-      </BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            <Route element={<PrivateRoute />}>
+              <Route element={<Homepage />} path="/" />
+            </Route>
+            <Route path="/login" element={<Login />} />
+          </Routes>
+        </BrowserRouter>
+      </AuthProvider>
     </div>
   );
 }
